@@ -1,40 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+Practical Exercise – Dashboard Tabs with React Query
 
-## Getting Started
+🧩 Goal
 
-First, run the development server:
+Build a small Next.js page that contains:
+- 2 tabs
+  - Characters
+  - Locations
+- Each tab fetches data from the Rick & Morty API  
+  https://rickandmortyapi.com/documentation
+- Display a simple styled card per item (no pagination required)
+- Avoid unnecessary refetching when switching tabs
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This exercise is meant to simulate a small feature inside a dashboard-style application.
+
+⸻
+
+⚙️ Technical Stack
+
+Please use:
+- Next.js (pages router)
+- TypeScript
+- styled-components
+- Axios
+- @tanstack/react-query (v5)
+
+⸻
+
+📄 Functional Requirements
+
+1. Tabs
+   - Two tabs: Characters and Locations
+   - Switching tabs should:
+     - Not reload the page
+     - Not refetch data if it was already loaded
+
+Keep the UI simple — we are not evaluating design skills.
+
+⸻
+
+3. Locations Tab
+
+Fetch from:
+
+```
+GET https://rickandmortyapi.com/api/location
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Display a simple card per character showing:
+- Image
+- Name
+- Status
+- Species
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+⸻
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Locations Tab
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Fetch from:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+GET https://rickandmortyapi.com/api/location
+```
 
-## Learn More
+Display a simple card per location showing:
+- Name
+- Type
 
-To learn more about Next.js, take a look at the following resources:
+⸻
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+🎨 Styling
+- Use styled-components
+- Keep styles simple
+- No need for responsiveness, animations, or advanced layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⸻
 
-## Deploy on Vercel
+🧠 What We’re Evaluating
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is not about perfection or pixel accuracy. We would like to understand your thinking and how you work.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+You don’t need to overengineer the solution.
+
+Keep it clean, readable, and maintainable.
+
+⸻
+
+🚫 What Is Not Required
+- No pagination
+- No filtering
+- No authentication
+
+⸻
+
+📦 Deliverables
+
+Please provide: 1. A Git repository (public or shared access) 2. A short section in this README explaining: 3. Any tradeoffs you made 4. What you would improve if this were production code
+
+⸻
+
+🤖 AI Usage Disclosure
+
+You are allowed to use AI tools.
+
+If you used any AI tool during development, please specify in this README:
+- Which tool you used (e.g., ChatGPT, Copilot, etc.)
+- For what purpose (e.g., scaffolding, debugging, typing interfaces, etc.)
+- Why you chose to use it
+
+We are not judging AI usage negatively.
+We want transparency and to understand how you integrate tools into your workflow.
+
+⸻
+
+⏱ Time Expectation
+
+Please don’t spend excessive time polishing details.
+We are more interested in how you approach the problem than in a perfect final result.
+
+⸻
+
+💬 Notes
+
+If any requirement is unclear, make reasonable assumptions and document them in this README.
+
+Clarity of thinking is more important than completeness.
