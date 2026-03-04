@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "rickandmortyapi.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
