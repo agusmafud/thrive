@@ -124,3 +124,41 @@ We are more interested in how you approach the problem than in a perfect final r
 If any requirement is unclear, make reasonable assumptions and document them in this README.
 
 Clarity of thinking is more important than completeness.
+
+---
+
+## Delivery Notes
+
+### Assumptions and Trade-offs
+
+I treated the required stack as mandatory, approaching the exercise as if joining a project with a pre-defined tech stack where the goal is to deliver within those constraints.
+
+That said, there are clear trade-offs worth calling out:
+
+- **Pages Router** is in maintenance mode. New Next.js features and optimizations target the App Router exclusively.
+- **styled-components** is no longer actively maintained. It still works, but the ecosystem has moved on.
+- **React Query v5** is solid on its own, but in a Next.js context much of what it provides (caching, deduplication) can be handled natively by the framework, especially under the App Router model.
+
+None of these blocked delivery, but they shaped some of the decisions below.
+
+### Production Improvements
+
+If this were headed to production, I would plan to:
+
+- Migrate to **App Router** and leverage its built-in data fetching and caching.
+- Replace styled-components with **CSS Modules** or the styling solution Next.js ships with (styled-jsx), to reduce maintenance risk.
+- Update all dependencies to their latest stable versions.
+- Reorganize the codebase into a **feature-based architecture** instead of the current type-based layout.
+- Add **Husky + lint-staged** to enforce linting and formatting on every commit.
+- Extract common UI components into a shared library and document them with **Storybook**.
+- Add **unit and integration tests** (React Testing Library and Playwrigth).
+
+### AI Usage
+
+I used **Cursor** (AI-assisted editor) during development. Specifically:
+
+- **Boilerplate generation**: when I had a good reference article or repo example (ie: https://github.com/alan2207/bulletproof-react/tree/master/apps/nextjs-pages), I used Cursor to implement it rather than copying it manually.
+- **Type generation**: I fed API response samples to generate the initial TypeScript interfaces.
+- **Documentation drafting**: the first pass of this delivery section was drafted from an audio transcript.
+
+In a production environment I would incorporate **Claude Code** into the workflow for its persistent project context, which improves substantially as it learns the codebase over time.
