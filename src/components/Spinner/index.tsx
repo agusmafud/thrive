@@ -3,7 +3,7 @@
 import { Wrapper, Circle } from "./styles";
 
 const Spinner = () => (
-  <Wrapper>
+  <Wrapper role="status" aria-label="Loading">
     <Circle />
   </Wrapper>
 );

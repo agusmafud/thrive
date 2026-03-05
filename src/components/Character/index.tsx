@@ -11,7 +11,7 @@ const Character = ({ character }: { character: TCharacter }) => (
     image={character.image}
   >
     <Status> 
-      <StatusDot $status={character.status} />
+      <StatusDot $status={character.status} aria-hidden="true" />
       {character.status} - {character.species}
     </Status>
   </EntityCard>

@@ -11,10 +11,14 @@ type TabListProps = {
 };
 
 const TabList = ({ tabs, activeTab, onTabChange }: TabListProps) => (
-  <Wrapper>
+  <Wrapper role="tablist">
     {tabs.map(({ key, label }) => (
       <TabButton
         key={key}
+        role="tab"
+        id={`tab-${key}`}
+        aria-selected={activeTab === key}
+        aria-controls={`tabpanel-${key}`}
         $active={activeTab === key}
         onClick={() => onTabChange(key)}
       >

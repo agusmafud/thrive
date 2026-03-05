@@ -21,7 +21,11 @@ export default function Home() {
           activeTab={activeTab}
           onTabChange={switchTab}
         />
-        <section>
+        <section
+          role="tabpanel"
+          id={`tabpanel-${activeTab}`}
+          aria-labelledby={`tab-${activeTab}`}
+        >
           {isLoading ? <Spinner /> : tabContent}
         </section>
       </main>

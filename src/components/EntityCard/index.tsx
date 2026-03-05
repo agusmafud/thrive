@@ -22,7 +22,7 @@ const EntityCard = ({
     <Wrapper>
       {hasImage && (
         <ImgWrapper>
-          <Image src={image} alt={title} fill />
+          <Image src={image} alt={title} fill sizes="250px" loading="eager" />
         </ImgWrapper>
       )}
       <ContentWrapper>

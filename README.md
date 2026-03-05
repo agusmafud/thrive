@@ -158,6 +158,7 @@ If this were headed to production, I would plan to:
 - Add **Husky + lint-staged** to enforce linting and formatting on every commit.
 - Extract common UI components into a shared library and document them with **Storybook**.
 - Add **unit and integration tests** (React Testing Library and Playwrigth).
+- Adopt a **headless component library** (e.g., Radix UI, React Aria) to handle the accessibility layer with unstyled primitives. This would require evaluating a refactor of existing components, but it is especially worthwhile at an early project stage like this one.
 
 ### AI Usage
 
@@ -166,5 +167,6 @@ I used **Cursor** (AI-assisted editor) during development. Specifically:
 - **Boilerplate generation**: when I had a good reference article or repo example (ie: https://github.com/alan2207/bulletproof-react/tree/master/apps/nextjs-pages), I used Cursor to implement it rather than copying it manually.
 - **Type generation**: I fed API response samples to generate the initial TypeScript interfaces.
 - **Documentation drafting**: the first pass of this delivery section was drafted from an audio transcript.
+- **Accessibility audit**: quick review of all components to identify simple a11y improvements.
 
 In a production environment I would incorporate **Claude Code** into the workflow for its persistent project context, which improves substantially as it learns the codebase over time.

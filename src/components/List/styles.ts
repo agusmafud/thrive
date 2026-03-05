@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ListWrapper = styled.li`
+export const ListWrapper = styled.ul`
+  list-style: none;
   padding: 64px 32px;
   display: flex;
   flex-wrap: wrap;
