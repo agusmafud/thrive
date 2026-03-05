@@ -1,6 +1,12 @@
 import Head from "next/head";
 
+import TabList from "@/components/Tabs";
+import List from "@/components/List";
+import { useDashboardTabs } from "@/hooks/useDashboardTabs";
+
 export default function Home() {
+  const { tabs, activeTab, switchTab, tabContent } = useDashboardTabs();
+
   return (
     <>
       <Head>
@@ -9,11 +15,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <main>
-          <h1>Thrive Front End Challenge</h1>
-        </main>
-      </div>
+      <main>
+        <TabList
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={switchTab}
+        />
+        <section>
+          <List>{tabContent}</List>
+        </section>
+      </main>
     </>
   );
 }
