@@ -1,11 +1,11 @@
 import Head from "next/head";
 
 import TabList from "@/components/Tabs";
-import List from "@/components/List";
+import Spinner from "@/components/Spinner";
 import { useDashboardTabs } from "@/hooks/useDashboardTabs";
 
 export default function Home() {
-  const { tabs, activeTab, switchTab, tabContent } = useDashboardTabs();
+  const { tabs, activeTab, switchTab, isLoading, tabContent } = useDashboardTabs();
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function Home() {
           onTabChange={switchTab}
         />
         <section>
-          <List>{tabContent}</List>
+          {isLoading ? <Spinner /> : tabContent}
         </section>
       </main>
     </>

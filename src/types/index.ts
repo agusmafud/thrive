@@ -27,3 +27,13 @@ export type TLocation = {
   url: string;
   created: string;
 };
+
+export type ApiResponse<T> = {
+  info: {
+    count: number;
+    pages: number;
+    next: string | null;
+    prev: string | null;
+  };
+  results: T[];
+};

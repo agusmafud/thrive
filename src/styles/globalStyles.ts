@@ -4,10 +4,10 @@ export const GlobalStyle = createGlobalStyle`
   html,
   body {
     max-width: 100vw;
-    overflow-x: hidden;
   }
 
   body {
+    overflow-x: hidden;
     color: ${({ theme }) => theme.colors.foreground};
     background: ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fontFamily};
