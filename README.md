@@ -141,10 +141,16 @@ That said, there are clear trade-offs worth calling out:
 
 None of these blocked delivery, but they shaped some of the decisions below.
 
+### Development Approach
+
+I structured the work in **small, meaningful commits**. This makes it straightforward to review the progression of the solution, I consider this a baseline practice for any project, regardless of scale.
+
 ### Production Improvements
 
 If this were headed to production, I would plan to:
 
+- Define a **branching strategy** (e.g., Git Flow or trunk-based development) with protected branches and pull request reviews.
+- Set up a **CI/CD pipeline** to automate linting, testing, building, and deployment on every push.
 - Migrate to **App Router** and leverage its built-in data fetching and caching.
 - Replace styled-components with **CSS Modules** or the styling solution Next.js ships with (styled-jsx), to reduce maintenance risk.
 - Update all dependencies to their latest stable versions.
